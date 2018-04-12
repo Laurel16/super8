@@ -1,0 +1,117 @@
+background-white {
+  padding: 10px;
+  color: white;
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
+  a {
+    color: #F5F5F5;
+  }
+  p {
+    color: #F5F5F5;
+  }
+}
+
+
+
+.background {
+  margin:0;
+  height: 100vh;
+  // background: image-url('spot-it-3.jpg') no-repeat center fixed;
+  background: asset-url('banner.jpg') no-repeat center fixed;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  z-index: 0 ;
+
+}
+
+
+
+.background-edit{
+  margin:0;
+  height: 300vh;
+  // background: image-url('spot-it-3.jpg') no-repeat center fixed;
+  background: asset-url('banner.jpg') no-repeat center fixed;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  z-index: 0 ;
+
+}
+
+
+
+.bg-gradient {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 80%);
+  margin:0;
+  height: 100vh;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  background-position: center center;
+
+}
+
+
+.bg-gradient-edit {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 80%);
+  margin:0;
+  height: 300vh;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  background-position: center center;
+
+}
+
+
+.background-white-new-notice {
+  padding: 20px;
+  color: white;
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
+  a {
+    color: #F5F5F5;
+  }
+  p {
+    color: #F5F5F5;
+  }
+}
+
+.background-new-notice{
+  margin:0;
+  height: 150vh;
+  // background: image-url('spot-it-3.jpg') no-repeat center fixed;
+  background: asset-url('banner.jpg') no-repeat center fixed;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  z-index: 0 ;
+
+}
+.bg-gradient-new-notice {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 80%);
+  margin:0;
+  height: 150vh;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  background-position: center center;
+
+}
+
+
+
+.flex {
+  display: flex;
+}
+
+.form-group label {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  margin-right: 30px;
+  font-weight: 400;
+
+}
+
+
+.form-group {
+  margin-bottom: 0px;
+}
+

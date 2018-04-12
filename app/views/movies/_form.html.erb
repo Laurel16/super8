@@ -1,0 +1,35 @@
+<div class="background-new-notice ">
+  <div class="bg-gradient-new-notice">
+    <div class="form-group margin-top">
+      <div class="container-lg margin-top">
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3">
+            <div class="background-white-new-notice">
+
+      <%= simple_form_for @movie do |f| %>
+      <%= f.input :category, collection: Movie::CATEGORIES, label: "Quel est le thème de votre annonce?", prompt: "Choissisez une catégorie" %>
+      <%= f.input :name, label: "Quel est le titre de votre annonce?"%>
+      <%= f.input :director, label: "Quel est le contenu de votre annonce?"%>
+      <%= f.input :year, label: "Quelle est votre ville? (La ville uniquement)", placeholder: "Paris" %>
+      <%= f.input :picture, label: "Voulez-vous ajouter une photo?" %>
+
+      <%= f.button :submit, class: "btn btn-success" %>
+      <% if @movie.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @movie.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+    <% end %>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
