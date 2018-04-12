@@ -1,0 +1,189 @@
+.card {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin-top: 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-box: 1px, solid, black;
+}
+
+.shadow {
+  box-shadow: 0px 0px 5px 1px rgba(115,115,115,0.25);
+}
+
+.title-card p {
+font-weight:400;
+}
+
+.title-card a{
+  color:#43465b;
+  font-weight: bold;
+  font-family: "raleway";
+}
+
+.title-card a:hover{
+  color: #d23333;
+}
+
+.title-card a:active {
+  color: #666666;
+}
+
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description h2 {
+  font-size: 24px;
+}
+.card-description p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.3;
+}
+
+.card-picture:hover .card-hover{
+opacity: 1;
+}
+
+.card-hover {
+  position:absolute;
+  background: rgba(255, 255, 255, 0.96);
+  top:0;
+  bottom: 0;
+  left:0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-likes {
+font-size: 14px;
+font-weight: bold;
+padding-top: 10px;
+padding-bottom: 10px;
+display: flex;
+justify-content: flex-start;
+background-color: white;
+}
+
+.card-likes li {
+display:inline-block;
+list-style: none;
+padding: 0 5px;
+
+}
+
+.card-likes ul {
+padding: 0;
+margin: 0;
+}
+
+.card-likes i {
+  padding-right: 4px;
+
+}
+
+
+.card-body {
+  background-color: white;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px #7F7F7F;
+  margin-top: 40px;
+
+
+}
+
+
+.card-picture p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: white;
+  opacity: 1;
+}
+
+
+.card-picture {
+  height:300px;
+  background-size: cover;
+  background-position: cover;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.card-picture-notice-index p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: white;
+  opacity: 1;
+}
+
+
+.card-picture-notice-index {
+  height:300px;
+  background-size: cover;
+  background-position: cover;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.white-box {
+  background-color: rgba(255,255,255, 0.3);
+  width: 84%;
+  height: 140px;
+  padding: 0 20px;
+  font-color: black;
+  text-align: center;
+}
+
+p.small {
+  font-size: 12px;
+   padding-left: 8px;
+   padding-top: 7px;
+   margin-bottom: 0;
+}
+
