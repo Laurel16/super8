@@ -1,2 +1,5 @@
+<% content_for :nav, render('shared/navbar_home') %>
+
 <%= @movie.name %>
 <%= @movie.pitch %>
+<%= cl_image_tag @movie.picture, height: 300, width: 400, crop: :fill %>

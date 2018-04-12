@@ -11,7 +11,8 @@
       <%= f.input :name, label: "Quel est le titre de votre annonce?"%>
       <%= f.input :director, label: "Quel est le contenu de votre annonce?"%>
       <%= f.input :year, label: "Quelle est votre ville? (La ville uniquement)", placeholder: "Paris" %>
-      <%= f.input :picture, label: "Voulez-vous ajouter une photo?" %>
+     <%= f.input :picture, label: "Voulez-vous ajouter une photo?" %>
+      <%= f.input :picture_cache, as: :hidden %>
 
       <%= f.button :submit, class: "btn btn-success" %>
       <% if @movie.errors.any? %>
