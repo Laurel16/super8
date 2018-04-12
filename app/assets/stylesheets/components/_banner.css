@@ -1,0 +1,91 @@
+.home-banner {
+  background: linear-gradient(-225deg,
+    rgba(0,101,168,0.5) 0%,
+    rgba(0,36,61,0.5) 50%),asset-url('banner.jpg');
+  background-size: cover;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+.home-banner p {
+font-family: "Raleway";
+font-size: 25px;
+color: white;
+opacity: 0.7;
+margin-bottom: 30px;}
+
+
+.home-banner p#arrow {
+font-family: "Raleway";
+font-size: 40px;
+color: white !important;
+margin-bottom: 20px;
+margin-top: 130px;}
+
+
+
+
+
+.home-banner h1 {
+  color: white;
+}
+
+p.arrow {
+  display: inline-block;
+  text-align: center;
+vertical-align: middle;
+}
+
+.page-banner {
+  background: linear-gradient(-225deg,
+    rgba(0,101,168,0.6) 0%,
+    rgba(0,36,61,0.6) 50%),asset-url('banner.jpg');
+  background-size: 100% 200%;
+  background-repeat: no-repeat;
+  height: 50vh;
+  color: white;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+.notice-show-banner {
+  background: linear-gradient(-225deg,
+    rgba(0,101,168,0.3) 0%,
+    rgba(0,36,61,0.3) 50%),asset-url('banner.jpg');
+  background-size: 100% 250%;
+  background-position-x: center; /* Add this line */
+    background-position-y: center;
+  background-repeat: no-repeat;
+  height: 50vh;
+  color: white;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+.error-banner {
+  background: linear-gradient(-225deg,
+    rgba(0,101,168,0.3) 0%,
+    rgba(0,36,61,0.3) 50%),asset-url('pool404.jpg');
+  background-size: 100% 250%;
+  background-position-x: center; /* Add this line */
+    background-position-y: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+.user-show-banner {
+  background: linear-gradient(-225deg,
+    rgba(0,101,168,0.3) 0%,
+    rgba(0,36,61,0.3) 50%),asset-url('banner.jpg');
+  background-size: 100% 250%;
+  background-repeat: no-repeat;
+  height: 60vh;
+  color: white;
+  text-align: center;
+  padding-top: 40vh;
+}
