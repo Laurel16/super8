@@ -20,22 +20,20 @@
 
                   <p><%=movie.name %></p>
 
+
                   <a href="<%= movie_url(movie) %>" >
                     <div class="card-hover">
-                  <h4 class="raleway" style= "color: black; margin-bottom: 30px;"><%=movie.name%></h4>
+                  <h4 class="raleway" style= "color: black; margin-bottom: 30px;">Un film de <%=movie.director%></h4>
                 </div>
                   </a>
               </div>
               <div class="card-likes">
               <ul class="list-inline">
-                <li><i class="fa fa-map-marker"></i> <%=movie.director%></li>
-
-
-          <% if movie.updated_at %>
-      <%=movie.updated_at.strftime("%d/%m/%y") %>
-      <% else %>
-      <%= movie.created_at.strftime("%d/%m/%y") %>
-      <% end %></p>
+                <li><i><%= image_tag "heart.svg", height: 20%></i></li>
+                <li><i><%= image_tag "year.svg", height: 20%></i><%=movie.year%></li>
+                <li><i><%= image_tag "clock.svg", height: 20%></i><%=movie.length%></li>
+                <li>Dès <%=movie.age%> ans</li>
+              </ul>
               </ul>
             </div>
 

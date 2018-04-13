@@ -7,6 +7,8 @@ class MoviesController < ApplicationController
    @movies = Movie.all
   end
 
+
+
   def show
     @movie = Movie.find(params[:id])
 
@@ -40,7 +42,7 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:name, :pitch, :director, :year, :created_at, :updated_at, :length, :language, :picture, :poster, :category)
+    params.require(:movie).permit(:name, :pitch, :director, :year, :created_at, :updated_at, :length, :language, :picture, :poster, :category, :age, :trailer)
   end
 
   def set_params

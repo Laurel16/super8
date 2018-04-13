@@ -1,5 +1,16 @@
 <% content_for :nav, render('shared/navbar_home') %>
 
-<%= @movie.name %>
-<%= @movie.pitch %>
+
+<br/>
+<br/>
+<br/>
+<div class= "container">
+<p><%= @movie.name %></p>
+<p><%= @movie.pitch %></p>
+<p><%= @movie.year %></p>
 <%= cl_image_tag @movie.picture, height: 300, width: 400, crop: :fill %>
+<p><%= @movie.trailer %></p>
+
+ <p> <iframe width="480" height="360" src="http://www.youtube.com/embed/<%=@movie.trailer%>" frameborder="0" allowfullscreen></iframe></p>
+
+</div>
