@@ -11,6 +11,9 @@ gem 'rails', '5.1.4'
 gem 'redis'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
+
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
@@ -19,6 +22,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'impressionist'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

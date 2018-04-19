@@ -2,15 +2,20 @@ class MoviesController < ApplicationController
 
   before_action :set_movie, only: [ :show, :edit, :update, :destroy]
   before_action :set_params, only: [:index]
+  impressionist actions: [:show]
+  impressionist :unique => [:session_hash]
 
   def index
    @movies = Movie.all
+
   end
 
 
 
   def show
     @movie = Movie.find(params[:id])
+    impressionist @movie
+
 
   end
 

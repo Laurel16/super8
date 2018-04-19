@@ -6,11 +6,20 @@
 <br/>
 <div class= "container">
 <p><%= @movie.name %></p>
+<P><%= @movie.scrap_number.to_i %><p>
 <p><%= @movie.pitch %></p>
 <p><%= @movie.year %></p>
 <%= cl_image_tag @movie.picture, height: 300, width: 400, crop: :fill %>
+<%=@movie.impressionist_count%>
 <p><%= @movie.trailer %></p>
 
  <p> <iframe width="480" height="360" src="http://www.youtube.com/embed/<%=@movie.trailer%>" frameborder="0" allowfullscreen></iframe></p>
 
+
+
 </div>
+
+<%= link_to "Supprimer le film", movie_path, class: "btn btn-success btn-white", id:"margin-top", method: :delete %>
+
+
+

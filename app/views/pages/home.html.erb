@@ -10,4 +10,48 @@
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit qui, dolor, delectus cumque, placeat aliquam debitis doloremque quo accusantium et molestiae iusto provident nisi? Ab dolore, dolor sequi maxime adipisci!  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cupiditate esse nemo quas deserunt numquam omnis illum ex id, aperiam eos repellendus explicabo nam non, sed, dolorum sequi quibusdam in.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci fugiat error, modi est quos eveniet, nam vero facere at odit magnam pariatur rerum impedit fuga in hic asperiores, molestiae libero.</p>
 
+<div class="container">
+  <div class="row">
+    <% @fresh_movies.each do |movie| %>
+    <div class="col-xs-12 col-sm-4">
+
+          <div class="card-body">
+             <div class="title-card text-center"><p style= "color: #43465b; font-weight: bold; font-family: Raleway; font-size: 18px;"> <%=movie.category%></p>
+            </div>
+             <div class="card-picture"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(
+              <%= cloudinary_url movie.picture, height: 300, :crop => :scale %>
+
+             );">
+
+                  <p><%=movie.name %></p>
+
+
+                  <a href="<%= movie_url(movie) %>" >
+                    <div class="card-hover">
+                  <h4 class="raleway" style= "color: black; margin-bottom: 30px;">Un film de <%=movie.director%></h4>
+                </div>
+                  </a>
+              </div>
+              <div class="card-likes">
+              <ul class="list-inline">
+                <ul class="list-inline">
+                <li><i class="fa fa-heart"></i> 140</li>
+                <li><i class="fa fa-eye"></i> 567</li>
+                <li>A partir de <%= movie.age %> ans</li>
+              </ul>
+              </ul>
+              </ul>
+            </div>
+
+          </div>
+
+
+    </div>
+    <% end %>
+
+
+
+  </div>
+
+</div>
 <%= link_to "Créer un film", new_movie_path, class: "btn btn-success btn-white", id:"margin-top" %>

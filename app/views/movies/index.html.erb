@@ -1,3 +1,4 @@
+<body style="background-color: white">
 <% content_for :nav, render('shared/navbar_home') %>
 
 
@@ -29,10 +30,11 @@
               </div>
               <div class="card-likes">
               <ul class="list-inline">
-                <li><i><%= image_tag "heart.svg", height: 20%></i></li>
-                <li><i><%= image_tag "year.svg", height: 20%></i><%=movie.year%></li>
-                <li><i><%= image_tag "clock.svg", height: 20%></i><%=movie.length%></li>
-                <li>Dès <%=movie.age%> ans</li>
+                <ul class="list-inline">
+                <li><i class="fa fa-heart"></i> 140</li>
+                <li><i class="fa fa-eye"></i> <%=movie.impressionist_count%></li>
+                <li>A partir de <%= movie.age %> ans</li>
+              </ul>
               </ul>
               </ul>
             </div>

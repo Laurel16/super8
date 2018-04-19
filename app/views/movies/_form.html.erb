@@ -15,6 +15,7 @@
      <%= f.input :picture, label: "Voulez-vous ajouter une photo?" %>
       <%= f.input :picture_cache, as: :hidden %>
       <%= f.input :trailer, label: "trailer" %>
+      <%= f.input :scrap_number, label: "scrap number" %>
 
       <%= f.button :submit, class: "btn btn-success" %>
       <% if @movie.errors.any? %>
