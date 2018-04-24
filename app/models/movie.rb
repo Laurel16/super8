@@ -1,7 +1,8 @@
 class Movie < ApplicationRecord
-  CATEGORIES = %w(Aventure Animé Enquête Politique Science-fiction)
-  AGES = %w(6 8 10 12 15)
+  CATEGORIES = %w(Aventure Animation Enquête Politique Science-fiction Comédie)
+  AGES = %w(5 6 7 8 9 10 12 15)
    mount_uploader :picture, PhotoUploader
-   is_impressionable counter_cache: true
+  mount_uploader :poster, PhotoUploader
+   is_impressionable counter_cache: true, :unique => true
 
 end

@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
 
+  before_action :authenticate_user!, only: [:create]
   before_action :set_movie, only: [ :show, :edit, :update, :destroy]
   before_action :set_params, only: [:index]
   impressionist actions: [:show]
@@ -15,8 +16,7 @@ class MoviesController < ApplicationController
   def show
     @movie = Movie.find(params[:id])
     impressionist @movie
-
-
+    @same_director = Movie.where("director ILIKE ?", "%#{@movie.director}%").where.not("name ILIKE ?","%#{@movie.name}%").order('greatest(created_at, updated_at) desc')
   end
 
   def new
@@ -35,8 +35,12 @@ class MoviesController < ApplicationController
   end
 
   def update
-    @movie.update(movie_params)
+    if @movie.update(movie_params)
     redirect_to movie_path(@movie)
+    else
+    render :edit
+    end
+
   end
 
   def destroy
@@ -47,7 +51,7 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:name, :pitch, :director, :year, :created_at, :updated_at, :length, :language, :picture, :poster, :category, :age, :trailer)
+    params.require(:movie).permit(:name, :pitch, :director, :year, :created_at, :updated_at, :length, :language, :picture, :poster, :category, :age, :trailer, :scrap_number, :original_title)
   end
 
   def set_params

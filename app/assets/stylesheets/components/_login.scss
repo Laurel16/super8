@@ -78,7 +78,7 @@ background-white {
 
 .background-new-notice{
   margin:0;
-  height: 150vh;
+  height: 200vh;
   // background: image-url('spot-it-3.jpg') no-repeat center fixed;
   background: asset-url('banner.jpg') no-repeat center fixed;
   -webkit-background-size: cover; /* pour anciens Chrome et Safari */
@@ -89,7 +89,7 @@ background-white {
 .bg-gradient-new-notice {
   background-image: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 80%);
   margin:0;
-  height: 150vh;
+  height: 200vh;
   -webkit-background-size: cover; /* pour anciens Chrome et Safari */
   background-size: cover; /* version standardisée */
   background-position: center center;

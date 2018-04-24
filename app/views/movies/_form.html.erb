@@ -11,9 +11,17 @@
       <%= f.input :age, collection: Movie::AGES, label: "Tranche d'âge", prompt: "Choissisez un âge" %>
       <%= f.input :name, label: "Titre du film"%>
       <%= f.input :director, label: "Metteur en scène"%>
-      <%= f.input :year, label: "Année de sortie" %>
+      <%= f.input :year, as: :date, start_year: Date.today.year - 100,
+                              end_year: Date.today.year - 12,
+                              order: [:year], :include_blank => '(All)', label: "Année de sortie"  %>
+      <%= f.input :original_title, label: "Quel est le titre original du film" %>
+      <%= f.input :language, label: "Dans quelle langue a été tournée le film"%>
+      <%= f.input :length, label: "Quelle est la durée du film?" %>
+      <%= f.input :pitch, as: :text, label: "Quel est le synopsis?" %>
      <%= f.input :picture, label: "Voulez-vous ajouter une photo?" %>
       <%= f.input :picture_cache, as: :hidden %>
+      <%= f.input :poster, label: "voulez-vous ajouter une affiche?" %>
+      <%= f.input :poster_cache, as: :hidden %>
       <%= f.input :trailer, label: "trailer" %>
       <%= f.input :scrap_number, label: "scrap number" %>
 
