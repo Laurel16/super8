@@ -1,0 +1,29 @@
+
+.btn-white{
+color: #00C29A;
+border: 1px solid #00C29A;
+background: #ffffff;
+box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+a.btn.btn-success.btn-white:hover {
+background: #00C29A;
+opacity: 0.5;
+color: white;
+}
+
+.btn-green{
+color: #ffffff;
+border: 1px solid #00C29A;
+background: #00C29A;
+box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+
+
+.btn-green:hover {
+background: white;
+color: #00C29A;
+opacity: 0.5;
+
+}

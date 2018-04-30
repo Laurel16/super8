@@ -1,8 +1,71 @@
 <body style="background-color: white">
-<% content_for :nav, render('shared/navbar_home') %>
+<% content_for :nav, render('shared/navbar_register') %>
 
 
-<div class="container">
+<div class="index-banner">
+
+
+<div class= "container thousand-one text-center margin-hundred">
+  <!-- form to add specific filters and refresh this page -->
+  <div class="row">
+    <div class="col-md-4">
+       <div class=" form-group">
+          <%= form_tag movies_path, method: :get do %>
+          <%= label_tag :query, "Par titre ou par réalisateur:" %>
+           <div class="form-inline">
+              <%= text_field_tag :query,
+              params[:query],
+              class: "form-control"
+              %>
+              <%= submit_tag "Go!", class: 'btn btn-green' %>
+          <%end %>
+          </div>
+      </div>
+    </div>
+
+
+  <!-- form to add specific filters and refresh this page -->
+
+    <div class="col-md-4">
+       <div class="form-group raleway">
+          <%= form_tag movies_path, method: :get do %>
+          <%= label_tag :search, "Par âges:"%>
+          <div class="form-inline">
+              <%= select_tag :search, options_for_select(Movie::AGES), include_blank: true, class:"form-control" %>
+              <%= submit_tag "Go!", class: 'btn btn-green' %>
+          </div>
+
+      <% end %>
+      </div>
+    </div>
+
+  <!-- form to add specific filters and refresh this page -->
+
+    <div class="col-md-4">
+       <div class="form-group raleway">
+          <%= form_tag movies_path, method: :get do %>
+          <%= label_tag :find, "Par catégories:"%>
+          <div class="form-inline">
+            <%= select_tag :find, options_for_select(Movie::CATEGORIES), include_blank: true, class:"form-control" %>
+            <%= submit_tag "Go!", class: 'btn btn-green' %>
+          </div>
+
+       <% end %>
+      </div>
+    </div>
+
+  </div>
+    <div class= "text-center padding-top">
+        <%= link_to "Voir tous les films", movies_path , class: "btn btn-green" %>
+    </div>
+</div>
+
+</div>
+
+
+
+
+<div class="container padding-top">
   <div class="row">
     <% @movies.each do |movie| %>
     <div class="col-xs-12 col-sm-4">
