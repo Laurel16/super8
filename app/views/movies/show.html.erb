@@ -1,40 +1,38 @@
 <body style="background-color: white">
 <% content_for :nav, render('shared/navbar') %>
 
-<h1 class="text-center margin-top-show"><%=@movie.name%></h1>
+<h1 class="text-center margin-top-show title"><%=@movie.name%></h1>
 
-<div class= "container margin-top-fifty">
+<div class= "container margin-top-fifty padding-bottom">
   <div class="row">
     <div class="col-xs-12 col-sm-4">
     <%= cl_image_tag @movie.poster, width: 400 %>
     </div>
-    <div class="col-xs-12 col-sm-6 col-sm-offset-2">
-      <p class="text-center"><strong>Le synopsis</strong></p>
+    <div class="col-xs-12 col-sm-7 col-sm-offset-1">
+      <p><strong>Le synopsis</strong></p>
     <p class="text-justify"><%= @movie.pitch %></p>
+
+
+        <p><strong>Réalisateur: </strong><%=@movie.director%></p>
+        <p><strong>Année de sortie:</strong> <%= @movie.year.strftime("%Y") %></p>
+        <p><strong>Titre d'origine:</strong> <%= @movie.original_title %></p>
+        <p><strong>Langue:</strong> <%=@movie.language%></p>
+        <% if @movie.length.present? %>
+        <p><strong>Durée:</strong> <%=@movie.length.strftime("%Hh%M")%></p>
+        <%end %>
+        <p><strong>À partir de:</strong> <%=@movie.age%> ans</p>
+         <i class="fa fa-eye"> <%=@movie.impressionist_count(:filter=>:session_hash) %></i>
+
+
     </div>
 
   </div>
 
 
-  <div class="row margin-top-fifty">
-      <div class="col-xs-12 col-sm-4">
-        <p> <iframe width="400" height="360" src="https://www.youtube.com/embed/<%=@movie.trailer%>" frameborder="0" allowfullscreen></iframe></p>
-
-      </div>
-
-
-
-
-      <div class="col-xs-12 col-sm-6 col-sm-offset-2">
-        <p>Réalisateur: <strong><%=@movie.director%></strong></p>
-        <p>Année de sortie: <strong><%= @movie.year.strftime("%Y") %></strong></p>
-        <p>Titre d'origine: <strong><%= @movie.original_title %></strong></p>
-        <p>Langue: <strong><%=@movie.language%></strong></p>
-        <% if @movie.length.present? %>
-        <p>Durée: <strong><%=@movie.length.strftime("%Hh%M")%></strong></p>
-        <%end %>
-        <p>À partir de: <strong><%=@movie.age%> ans</strong></p>
-         <i class="fa fa-eye"> <%=@movie.impressionist_count(:filter=>:session_hash) %></i>
+  <div class="row margin-top-fifty text-center">
+      <div>
+        <p class="trailer"> <strong>La bande-annonce</strong></p>
+        <iframe width="90%" height="460" src="https://www.youtube.com/embed/<%=@movie.trailer%>" frameborder="0" allowfullscreen></iframe>
       </div>
 
   </div>
@@ -42,7 +40,7 @@
 <% if @same_director.present? %>
 <p class="text-center margin-top-fifty"><strong>Les autres films de <%=@movie.director%></strong></p>
 <% @same_director.each do |movie| %>
-<div class="col-xs-12 col-sm-5">
+<div class="col-xs-12 col-sm-4">
 
       <!-- insert <div class="card"> -->
 
