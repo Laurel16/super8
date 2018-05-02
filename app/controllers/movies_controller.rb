@@ -14,7 +14,7 @@ class MoviesController < ApplicationController
       sql_query = "name ILIKE :query OR director ILIKE :query"
       @movies = Movie.where(sql_query, query:"%#{params[:query]}%").order('greatest(created_at, updated_at) desc')
     elsif params[:search].present?
-      @movies = Movie.where(age: params[:search]).order('greatest(created_at, updated_at) desc')
+      @movies = Movie.where("age >= ? ", params[:search]).order('greatest(created_at, updated_at) desc')
     elsif params[:find].present?
       @movies = Movie.where(category: params[:find]).order('greatest(created_at, updated_at) desc')
     else
