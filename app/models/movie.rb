@@ -4,6 +4,6 @@ class Movie < ApplicationRecord
    mount_uploader :picture, PhotoUploader
   mount_uploader :poster, PhotoUploader
    is_impressionable counter_cache: true, :unique => true
-   paginates_per 18
+   paginates_per 12
 
 end

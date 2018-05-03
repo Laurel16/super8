@@ -63,6 +63,22 @@
 </div>
 
 
+<% if params[:query].present? %>
+<p class="text-center margin-top-fifty"> <strong>Les films correspondants à votre recherche "<%= params[:query]%>"</strong>
+  <% if @movies_total_number == 0 %>
+  <p class= "text-center">Nous n'avons pas encore ce titre ou ce-tte réalisateur-trice dans la base. Désolés! </p>
+  <p class= "text-center">Vous pouvez nous envoyer vos suggestions de films dans la partie contact</p>
+  <%end%>
+<% end %>
+
+<% if params[:search].present? %>
+<p class="text-center margin-top-fifty"> <strong>Les films pour les enfants de <%= params[:search]%> ans et moins</strong></p>
+<% end %>
+
+
+<% if params[:find].present? %>
+<p class="text-center margin-top-fifty"> <strong>Les films de la catégorie "<%= params[:find]%>"</strong></p>
+<% end %>
 
 
 <div class="container padding-top padding-bottom">
