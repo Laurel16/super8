@@ -86,7 +86,7 @@
 
 
 <% if current_user && current_user.admin? %>
-    <% if policy(Movie).update? %>
+    <% if policy(Movie).edit? %>
     <p class="text-center padding-bottom">
     <%= link_to "Modifier le film", edit_movie_path, class: "btn btn-success btn-white", id:"margin-top" %>
     <%end%>

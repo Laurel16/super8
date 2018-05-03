@@ -43,6 +43,7 @@ class MoviesController < ApplicationController
 
 
   def edit
+    authorize @movie
   end
 
   def create

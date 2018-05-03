@@ -17,7 +17,7 @@ class MoviePolicy < ApplicationPolicy
     user_is_admin?
   end
 
-  def update?
+  def edit?
     user_is_admin?
   end
 
