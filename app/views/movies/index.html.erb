@@ -78,7 +78,7 @@
              <div class="title-card text-center"><p style= "color: #43465b; font-weight: bold; font-family: Raleway; font-size: 18px;"> <%=movie.category%></p>
             </div>
              <div class="card-picture"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(
-              <%= cloudinary_url movie.picture, height: 300, :crop => :scale %>
+              <%= cloudinary_url movie.picture, height: 300, :crop => :scale, :alt=>"Image du film #{movie.name}" %>
 
              );">
 
@@ -111,5 +111,9 @@
 
 
   </div>
+
+  <div class="container text-center margin-top">
+  <%= paginate @movies, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination-sm pagination-centered"%>
+   </div>
 
 </div>

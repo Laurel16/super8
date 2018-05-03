@@ -24,6 +24,8 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'impressionist'
 gem "pundit"
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

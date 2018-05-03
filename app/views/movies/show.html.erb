@@ -6,7 +6,7 @@
 <div class= "container margin-top-fifty padding-bottom">
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-    <%= cl_image_tag @movie.poster, width: 400 %>
+    <%= cl_image_tag @movie.poster, width: 400, :alt=>"Affiche du film #{@movie.name}"%>
     </div>
     <div class="col-xs-12 col-sm-7 col-sm-offset-1">
       <p><strong>Le synopsis</strong></p>

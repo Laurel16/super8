@@ -22,7 +22,7 @@ class MoviesController < ApplicationController
     end
     @movies_total_number = @movies.length
 
-
+    @movies = @movies.page params[:page]
 
   end
 
