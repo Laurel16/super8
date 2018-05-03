@@ -1,17 +1,39 @@
-<h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
 
+
+
+<% content_for :nav, render('shared/navbar_register') %>
+
+
+<div class="background ">
+  <div class="bg-gradient">
+    <div class="form-group margin-top">
+      <div class="container margin-top">
+        <div class="row;">
+          <div class="col-sm-4 col-sm-offset-4">
+            <div class="background-white">
+            <h2>Log in</h2>
+
+
+
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+    <%= f.input :email, required: false, autofocus: true %>
+    <%= f.input :password, required: false %>
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Log in", class:"btn btn-danger" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

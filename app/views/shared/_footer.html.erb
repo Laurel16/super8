@@ -12,5 +12,12 @@
     <div class="footer-link_to margin-right">
     <a href=""><%= link_to "Contact", contact_path%></a>
     <a href=""><%= link_to "Crédits", contact_path%></a>
+    <% if current_user && current_user.admin? %>
+    <a><%= link_to destroy_user_session_path, method: :delete do %>
+                 <%= t(".sign_out", default: "Logout") %> </a>
+              <% end %>
+    <% else %>
+    <a><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></a>
+    <% end %>
   </div>
   </div>

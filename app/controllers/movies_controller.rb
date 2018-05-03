@@ -29,6 +29,7 @@ class MoviesController < ApplicationController
 
 
   def show
+    skip_authorization
     @movie = Movie.find(params[:id])
     impressionist @movie
     @same_director = Movie.where("director ILIKE ?", "%#{@movie.director}%").where.not("name ILIKE ?","%#{@movie.name}%").order('greatest(created_at, updated_at) desc')
@@ -36,6 +37,7 @@ class MoviesController < ApplicationController
 
   def new
     @movie = Movie.new
+    authorize @movie
 
   end
 
@@ -47,6 +49,8 @@ class MoviesController < ApplicationController
     @movie = Movie.new(movie_params)
     @movie.save
     redirect_to movie_path(@movie)
+    authorize @movie
+
   end
 
   def update
@@ -55,12 +59,15 @@ class MoviesController < ApplicationController
     else
     render :edit
     end
+    authorize @movie
 
   end
 
   def destroy
     @movie.destroy
     redirect_to movies_path
+    authorize @movie
+
   end
 
   private

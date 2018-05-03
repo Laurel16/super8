@@ -12,7 +12,7 @@
 </div>
 
 <div class="text-center"><strong>Les films les plus consultés</strong></div>
-<div class="container">
+<div class="container home-view">
   <div class="row">
     <% @fresh_movies.each do |movie| %>
     <div class="col-xs-12 col-sm-4">
@@ -56,4 +56,12 @@
   </div>
 
 </div>
-<p class="text-center margin-top-fifty"></p> <%= link_to "Créer un film", new_movie_path, class: "btn btn-success btn-white", id:"margin-top" %>
+
+ <% if current_user && current_user.admin? %>
+<% if policy(Movie).create? %>
+
+<div class="container button-new">
+<p class="text-center"> <%= link_to "Créer un film", new_movie_path, class: "btn btn-success btn-white", id:"margin-top" %></p>
+</div>
+<%end%>
+<% end %>
