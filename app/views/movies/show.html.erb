@@ -15,7 +15,9 @@
 
         <p><strong>Réalisateur: </strong><%=@movie.director%></p>
         <p><strong>Année de sortie:</strong> <%= @movie.year.strftime("%Y") %></p>
+         <% if @movie.original_title.present? %>
         <p><strong>Titre d'origine:</strong> <%= @movie.original_title %></p>
+        <%end%>
         <p><strong>Langue:</strong> <%=@movie.language%></p>
         <% if @movie.length.present? %>
         <p><strong>Durée:</strong> <%=@movie.length.strftime("%Hh%M")%></p>
