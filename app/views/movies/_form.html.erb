@@ -11,7 +11,7 @@
       <%= f.input :scrap_number, label: "scrap number" %>
       <%= f.input :name, label: "Titre du film"%>
       <%= f.input :age, collection: Movie::AGES, label: "Tranche d'âge", prompt: "Choissisez un âge" %>
-      <%= f.input :category, collection: Movie::CATEGORIES, label: "Catégorie", prompt: "Choissisez une catégorie" %>
+      <%= f.input :category, label: "Catégorie", prompt: "Choissisez une catégorie" %>
       <%= f.input :director, label: "Metteur en scène"%>
       <%= f.input :year, as: :date, start_year: Date.today.year - 100,
                               end_year: Date.today.year,
