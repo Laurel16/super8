@@ -30,7 +30,9 @@
 
 
     <%= yield %>
+    <% unless action_name == "search" %>
  <%= render 'shared/footer' %>
+ <% end %>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application' %>

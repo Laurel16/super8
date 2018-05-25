@@ -14,7 +14,7 @@
 <div class="text-center"><strong>Les films les plus consultés</strong></div>
 <div class="container home-view">
   <div class="row">
-    <% @fresh_movies.each do |movie| %>
+    <% @random_movies.each do |movie| %>
     <div class="col-xs-12 col-sm-4">
 
           <div class="card-body">
@@ -63,5 +63,11 @@
 <div class="container button-new">
 <p class="text-center"> <%= link_to "Créer un film", new_movie_path, class: "btn btn-success btn-white", id:"margin-top" %></p>
 </div>
+
+<div class="container button-new">
+<p class="text-center"> <%= link_to "Chercher un film", search_path, class: "btn btn-success btn-white", id:"margin-top" %></p>
+</div>
+
+
 <%end%>
 <% end %>

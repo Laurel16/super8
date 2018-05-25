@@ -2,6 +2,7 @@
 <% content_for :nav, render('shared/navbar_register') %>
 
 
+
 <div class="index-banner">
 
 
@@ -58,8 +59,6 @@
     <div class= "text-center padding-top">
         <%= link_to "Voir tous les films", movies_path , class: "btn btn-green" %>
     </div>
-    <br/>
-    <p style= "color:white">&#x25BD; </p>
 </div>
 
 </div>
@@ -81,59 +80,3 @@
 <% if params[:find].present? %>
 <p class="text-center margin-top-fifty"> <strong>Les films de la catégorie "<%= params[:find]%>"</strong></p>
 <% end %>
-
-
-
-
-<div class="container padding-top padding-bottom">
-  <div class="row">
-    <% @movies.each do |movie| %>
-    <div class="col-xs-12 col-sm-4">
-
-      <!-- insert <div class="card"> -->
-
-
-
-          <div class="card-body">
-             <div class="title-card text-center"><p style= "color: #43465b; font-weight: bold; font-family: Raleway; font-size: 18px;"> <%=movie.category%></p>
-            </div>
-             <div class="card-picture"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(
-              <%= cloudinary_url movie.picture, height: 300, :crop => :scale, :alt=>"Image du film #{movie.name}" %>
-
-             );">
-
-                  <p><%=movie.name %></p>
-
-
-                  <a href="<%= movie_url(movie) %>" >
-                    <div class="card-hover">
-                  <h4 class="raleway" style= "color: black; margin-bottom: 30px;">Un film de <%=movie.director%></h4>
-                </div>
-                  </a>
-              </div>
-              <div class="card-likes">
-              <ul class="list-inline">
-                <ul class="list-inline">
-                <li><i class="fa fa-heart red"></i> 140</li>
-                <li><i class="fa fa-eye green"></i> <%=movie.impressionist_count(:filter=>:session_hash)%></li>
-                <li><p> À partir de <strong><%= movie.age %> ans</strong></p></li>
-              </ul>
-              </ul>
-              </ul>
-            </div>
-
-          </div>
-
-
-    </div>
-    <% end %>
-
-
-
-  </div>
-
-  <div class="container text-center margin-top">
-  <%= paginate @movies, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination-sm pagination-centered"%>
-   </div>
-
-</div>
