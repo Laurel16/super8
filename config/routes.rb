@@ -8,6 +8,13 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :movies
+
+  put 'like' => 'movies#upvote'
+  put 'unlike' => 'movies#downvote'
+
   resources :users
+
+
+
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

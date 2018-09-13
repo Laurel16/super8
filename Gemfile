@@ -26,6 +26,7 @@ gem 'impressionist'
 gem "pundit"
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+gem 'acts_as_votable', '~> 0.11.1'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

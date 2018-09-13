@@ -72,6 +72,31 @@ class MoviesController < ApplicationController
 
   end
 
+  def upvote
+  session[:voting_id] ||= create_unique_voting_id
+  voter = VotingSession.find_or_create_by_unique_voting_id(session[:voting_id])
+  voter.likes @movie
+
+  respond_to do |format|
+    format.html { redirect_back(fallback_location: root_path) }
+    format.js
+    end
+  end
+  #redirect_to movie_path(@movie)
+
+
+  def downvote
+  session[:voting_id] ||= create_unique_voting_id
+  voter = VotingSession.find_or_create_by_unique_voting_id(session[:voting_id])
+  voter.unlikes @movie
+  respond_to do |format|
+    format.html { redirect_back(fallback_location: root_path)}
+    format.js
+    end
+  #redirect_to movie_path(@movie)
+end
+
+
   private
 
   def movie_params
