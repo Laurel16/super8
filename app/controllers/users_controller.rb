@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  acts_as_voter
+
 
 
 before_action :set_user, only: [ :edit, :update, :destroy]
