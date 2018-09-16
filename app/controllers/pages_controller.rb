@@ -9,6 +9,9 @@ class PagesController < ApplicationController
   def contact
   end
 
+  def about
+  end
+
   def non_footer_action
   do_stuff
   @skip_footer = true

@@ -7,12 +7,11 @@
      <%= link_to "Trouver un film", movies_path, class: "btn btn-success btn-lg"%>
 </div>
 
-<div class="container presentation home-view">
-<p class="text-justify"> Encouragé par un père passionné de cinéma, j'ai vu beaucoup de films quand j'étais enfant. Ces récits des mystères de l'âme humaine et de la vie des adultes me fascinaient. Ils ont profondément marqué mon imagination. Super 8 est un compte rendu de transmission cinématographique à mes enfants. </br> Comme les contes ou la mythologie, le cinema permet de partager avec eux une bibliothèque commune de références, de répliques cultes, d'illustrations de la grande Histoire ou des petites histoires. Ils leurs ouvrent une culture à la fois pointue et populaire. Quand ma fille me dit "On a fait un détour parceque c'était joli" ou que mon fils me demande "Comment est votre blanquette?", ils savent que cela désamorçe en un clin d'oeil tout esprit de sérieux (vous avez trouvé les titres des films?). </br> J'ai selectionné ceux qu'ils ont aimé voir, même quand ils étaient en noir et blanc (l'enthousiasme spontané pour cette teinte de pellicule équivaut à l'inscription "lapin à la moutarde" au menu la cantine). </br> Cette sélection est absoluement subjective. Elle propose des films qui nous ont passionnés, enchantés, destabilisés. Elle élude certains longs métrages désignés comme des incontournables pour les enfants et beaucoup d'oeuvres ne sont pas spécifiquement destinées à un jeune public. Ils ne satisfont pas tous les goûts, juste les nôtres et on préfère Les Monthy Python à Jacques Tati (pardon monsieur Hulot). </br>
-Super 8 permet de chercher par âge, par genre, par titre, par réalisateur.rice. L'âge auquel les enfants sont succeptibles d'aprécier un film est indicative et dépend de leur receptivité. </br>Bonnes scéances !</p>
-</div>
 
-<div class="text-center"><strong>Les films les plus consultés</strong></div>
+<p class="explain justify text-center">Super 8 permet de trouver des idées de films par âge, genre, titre ou réalisateur.rice. </br>L'âge auquel les enfants sont succeptibles d'aprécier un film est indicative et dépend de leur receptivité.</br>
+Bonnes scéances ! </br><%= image_tag "logo.svg", height: 20 %> </p>
+
+
 <div class="container home-view">
   <div class="row">
     <% @random_movies.each do |movie| %>
@@ -37,13 +36,13 @@ Super 8 permet de chercher par âge, par genre, par titre, par réalisateur.rice
               </div>
               <div class="card-likes">
               <ul class="list-inline">
-                <ul class="list-inline">
+
                 <li><i class="fa fa-heart red"></i> 140</li>
                 <li><i class="fa fa-eye green"></i> <%=movie.impressionist_count(:filter=>:session_hash)%></li>
                 <li>A partir de <%= movie.age %> ans</li>
               </ul>
-              </ul>
-              </ul>
+
+
             </div>
 
           </div>
