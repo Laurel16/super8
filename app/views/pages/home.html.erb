@@ -1,4 +1,4 @@
-<Body style= "background-color: white">
+<body style= "background-color: white">
 <% content_for :nav, render('shared/navbar_home') %>
 
 <div class="home-banner">
@@ -8,11 +8,12 @@
 </div>
 
 
-<p class="explain justify text-center">Super 8 permet de trouver des idées de films par âge, genre, titre ou réalisateur.rice. </br>L'âge auquel les enfants sont succeptibles d'aprécier un film est indicative et dépend de leur receptivité.</br>
-Bonnes scéances ! </p>
+<p class="explain justify text-center">Super 8 permet de trouver des idées de films à partager avec ses enfants par âge, par genre, par titre ou par réalisateur.rice. </br>L'âge est indicatif et dépend de leur receptivité.</br>
+Bonnes scéances !  </p>
 
 
 <div class="container home-view">
+
   <div class="row">
     <% @random_movies.each do |movie| %>
     <div class="col-xs-12 col-sm-4">
@@ -37,9 +38,9 @@ Bonnes scéances ! </p>
               <div class="card-likes">
               <ul class="list-inline">
 
-                <li><i class="fa fa-heart red"></i> 140</li>
+                <li><i class="fa fa-heart red"></i> À partir de <%= movie.age %> ans</li>
                 <li><i class="fa fa-eye green"></i> <%=movie.impressionist_count(:filter=>:session_hash)%></li>
-                <li>A partir de <%= movie.age %> ans</li>
+
               </ul>
 
 
@@ -53,7 +54,7 @@ Bonnes scéances ! </p>
 
 
 
-  </div>
+
 
 </div>
 
@@ -71,3 +72,4 @@ Bonnes scéances ! </p>
 
 <%end%>
 <% end %>
+</div>

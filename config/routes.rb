@@ -6,6 +6,7 @@ Rails.application.routes.draw do
    get 'search', to: 'pages#search', as: :search
   get 'about', to: 'pages#about', as: :about
 
+
   devise_for :users
   root to: 'pages#home'
   resources :movies

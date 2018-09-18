@@ -1,17 +1,24 @@
 <body style="background-color: white">
-<% content_for :nav, render('shared/navbar_register') %>
+<% content_for :nav, render('shared/navbar_home') %>
 
 
 <div class="index-banner">
 
+</div>
 
-<div class= "container thousand-one text-center margin-hundred">
+<div class= "container thousand-one text-center margin-sixty">
   <!-- form to add specific filters and refresh this page -->
+
+   <div class= "text-center padding-bottom">
+        <%= link_to "Voir tous les films", movies_path , class: "btn btn-white" %>
+    </div>
+
+
   <div class="row">
     <div class="col-md-4">
        <div class=" form-group">
           <%= form_tag movies_path, method: :get do %>
-          <%= label_tag :query, "Par titre ou par réalisateur:" %>
+          <%= label_tag :query, "Chercher par titre ou par réalisateur:" %>
            <div class="form-inline">
               <%= text_field_tag :query,
               params[:query],
@@ -29,7 +36,7 @@
     <div class="col-md-4">
        <div class="form-group raleway">
           <%= form_tag movies_path, method: :get do %>
-          <%= label_tag :search, "Par âges:"%>
+          <%= label_tag :search, "Trier par âges:"%>
           <div class="form-inline">
               <%= select_tag :search, options_for_select(Movie::AGES), include_blank: true, class:"form-control" %>
               <%= submit_tag "Go!", class: 'btn btn-green' %>
@@ -44,7 +51,7 @@
     <div class="col-md-4">
        <div class="form-group raleway">
           <%= form_tag movies_path, method: :get do %>
-          <%= label_tag :find, "Par catégories:"%>
+          <%= label_tag :find, "Trier par catégories:"%>
           <div class="form-inline">
             <%= select_tag :find, options_for_select(Movie::CATEGORIES), include_blank: true, class:"form-control" %>
             <%= submit_tag "Go!", class: 'btn btn-green' %>
@@ -55,14 +62,12 @@
     </div>
 
   </div>
-    <div class= "text-center padding-top">
-        <%= link_to "Voir tous les films", movies_path , class: "btn btn-green" %>
-    </div>
-    <br/>
+
+
     <p style= "color:white">&#x25BD; </p>
-</div>
 
 </div>
+
 
 
 <% if params[:query].present? %>
@@ -85,7 +90,7 @@
 
 
 
-<div class="container padding-top padding-bottom">
+<div class="container padding-bottom">
   <div class="row">
     <% @movies.each do |movie| %>
     <div class="col-xs-12 col-sm-4">
@@ -114,7 +119,7 @@
               <div class="card-likes">
               <ul class="list-inline">
                 <ul class="list-inline">
-                <li><i class="fa fa-heart red"></i> 140</li>
+
                 <li><i class="fa fa-eye green"></i> <%=movie.impressionist_count(:filter=>:session_hash)%></li>
                 <li><p> À partir de <strong><%= movie.age %> ans</strong></p></li>
               </ul>
