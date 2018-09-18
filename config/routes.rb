@@ -10,8 +10,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :movies
 
-  put 'like' => 'movies#upvote'
-  put 'unlike' => 'movies#downvote'
+
 
   resources :users
 

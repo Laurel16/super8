@@ -1,7 +1,7 @@
 class Movie < ApplicationRecord
-  acts_as_votable
 
-  CATEGORIES = %w(Comédie Aventure Animation Drame Thriller Science-fiction Fantastique Guerre Musicale Espionnage)
+
+  CATEGORIES = %w(Comédie Aventure Animation Drame Science-fiction Comédie-musicale)
 
   AGES = %w(4 5 6 7 8 9 10 11 12 13 14 15)
    mount_uploader :picture, PhotoUploader
