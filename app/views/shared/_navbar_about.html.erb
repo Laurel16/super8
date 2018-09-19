@@ -1,38 +1,44 @@
-
-<div class="navbar-wagon transparent-nav navbar-fixed-top">
+<div class="navbar-wagon black-nav navbar-fixed-top ">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-        <%= image_tag "film-roll-true-red.svg", height: 50%>
-
+    <%= image_tag "logo.svg", height: 20 %>
   <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <%= link_to "Voir tous les films", movies_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "À propos", about_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+
+    <%= link_to "Trouver un film", movies_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Crédits", credits_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
 
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><%= link_to "Voir tous les films", movies_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Trouver un film", movies_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to "À propos", about_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         </ul>
     </div>
   </div>
-</div>
+
+  </div>
 
   <!-- Dropdown list appearing on mobile only -->
-<div class="navbar-wagon-item hidden-md hidden-lg">
+  <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li> <%= link_to "Voir tous les films", movies_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "À propos", about_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-      </ul>
+        <li><%= link_to "Les films", movies_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+         <% if user_signed_in? %>
+
+      <li> <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %><li>
+      <% end %>
       </ul>
     </div>
   </div>
 </div>
+
+

@@ -114,3 +114,20 @@ margin-bottom: 30px;}
   text-align: center;
   padding-top: 40vh;
 }
+
+
+.credits-banner {
+background: linear-gradient(-225deg,
+    rgba(0,101,168,0.3) 0%,
+    rgba(0,36,61,0.3) 50%),asset-url('thanks.jpg');
+  background-size: 100% 300%;
+  background-position-x: center; /* Add this line */
+    background-position-y: center;
+  background-repeat: no-repeat;
+  height: 50vh;
+  color: white;
+  text-align: center;
+padding-top: 40vh;
+}
+
+

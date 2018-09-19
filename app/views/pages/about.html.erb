@@ -1,19 +1,22 @@
 
 <body style= "background-color: white">
+    <% content_for :nav, render('shared/navbar_about') %>
 <div class="container presentation">
 
 <div class="row">
 
-<div class="col-xs-12 col-sm-4">
- <%= image_tag "me.JPG", height: 400 %>
+<div class="col-xs-12 col-sm-3">
+ <%= image_tag "me.JPG", height: 400,  :alt => "Laure années 80 île de Ré"%>
 </div>
 
-<div class="col-xs-12 col-sm-7 col-sm-offset-1">
-<p class="text-justify">Super 8 est un compte rendu de transmission cinématographique à mes enfants. </br> </br>Comme les contes ou la mythologie, le cinema permet de partager avec eux des références et des répliques cultes. </br></br> J'ai selectionné ceux qu'ils ont aimé voir, cette sélection est absoluement subjective et beaucoup d'oeuvres ne sont pas spécifiquement destinées à un jeune public. </br></br>
-Super 8 permet de chercher par âge, par genre, par titre, par réalisateur.rice. L'âge auquel les enfants sont succeptibles d'aprécier un film est indicative et dépend de leur receptivité. </br> </br>
-</p><p class="text-center">Bonnes scéances !</p><%= link_to "Crédits", credits_path %>
+<div class="col-xs-12 col-sm-6 col-sm-offset-1">
+<p class="text-justify">Super 8 est un carnet de transmission cinématographique à mes enfants. </br> </br>J'ai grandis dans les années 80 et le cinéma a beaucoup compté dans la construction de mon imaginaire.</br> </br>Comme les contes ou la mythologie, le cinema permet de partager avec eux des références et des répliques cultes. </br></br> Cette sélection est absoluement subjective et beaucoup d'oeuvres ne sont pas spécifiquement destinées à un jeune public. </br><br/>Amusez-vous bien!
+<p class="margin-twenty"><b>Pour me contacter</b>: contact[at]super-8.com</p>
+<p class="credits-link"><b>Les crédits</b>: <%= link_to "c'est par ici", credits_path %></p>
+
 </div>
 </div>
+
 </div>
 
 
