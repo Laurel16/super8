@@ -1,5 +1,8 @@
 <body style="background-color: white">
 <% content_for :nav, render('shared/navbar') %>
+<% content_for(:title) do %>
+  <%= @movie.name %>
+<% end %>
 
 <h1 class="text-center margin-top-show title"><%=@movie.name%></h1>
 

@@ -74,7 +74,7 @@
 <p class="text-center margin-top-fifty"> <strong>Les films correspondants à votre recherche "<%= params[:query]%>"</strong>
   <% if @movies_total_number == 0 %>
   <p class= "text-center">Nous n'avons pas encore cette référence ou ce-tte réalisateur-trice dans la base. Désolés! </p>
-  <p class= "text-center">Vous pouvez nous envoyer vos suggestions de films dans la partie <%= link_to "contact", contact_path%>.</p>
+  <p class= "text-center">Vous pouvez nous envoyer vos suggestions de films dans la partie <%= link_to "contact", about_path%>.</p>
   <%end%>
 <% end %>
 
