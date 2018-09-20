@@ -58,7 +58,7 @@ Bonnes scéances !  </p>
 
 
 </div>
-<p class="text-center"> <%= link_to "Voir tous les film", search_path, class: "btn btn-success btn-white", id:"margin-top" %></p>
+<p class="text-center margin-twenty"> <%= link_to "Voir tous les film", search_path, class: "btn btn-success btn-white", id:"margin-top" %></p>
  <% if current_user && current_user.admin? %>
 <% if policy(Movie).create? %>
 
