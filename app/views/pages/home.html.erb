@@ -14,6 +14,7 @@ Bonnes scéances !  </p>
 
 <div class="container home-view">
 
+
   <div class="row">
     <% @random_movies.each do |movie| %>
     <div class="col-xs-12 col-sm-4">
@@ -64,7 +65,7 @@ Bonnes scéances !  </p>
 <div class="container button-new">
 <p class="text-center"> <%= link_to "Créer un film", new_movie_path, class: "btn btn-success btn-white", id:"margin-top" %></p>
 
-<p class="text-center"> <%= link_to "Chercher un film", search_path, class: "btn btn-success btn-white", id:"margin-top" %></p>
+<p class="text-center"> <%= link_to "Voir tous les film", search_path, class: "btn btn-success btn-white", id:"margin-top" %></p>
 </div>
 
 
