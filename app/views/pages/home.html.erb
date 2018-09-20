@@ -58,14 +58,14 @@ Bonnes scéances !  </p>
 
 
 </div>
-
+<p class="text-center"> <%= link_to "Voir tous les film", search_path, class: "btn btn-success btn-white", id:"margin-top" %></p>
  <% if current_user && current_user.admin? %>
 <% if policy(Movie).create? %>
 
 <div class="container button-new">
 <p class="text-center"> <%= link_to "Créer un film", new_movie_path, class: "btn btn-success btn-white", id:"margin-top" %></p>
 
-<p class="text-center"> <%= link_to "Voir tous les film", search_path, class: "btn btn-success btn-white", id:"margin-top" %></p>
+
 </div>
 
 
