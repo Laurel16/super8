@@ -33,6 +33,11 @@ class MoviePolicy < ApplicationPolicy
  user_is_admin?
   end
 
+  def about?
+    true
+  end
+
+
   private
 
   def user_is_admin?

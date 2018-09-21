@@ -10,6 +10,10 @@ class UserPolicy < ApplicationPolicy
    user_is_admin?
   end
 
+  def about?
+    true
+  end
+
 
 private
 
