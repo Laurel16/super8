@@ -93,8 +93,6 @@ GEM
       railties (>= 3.2, < 6.0)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
-    friendly_id (5.2.4)
-      activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     haml (5.0.4)
@@ -282,7 +280,6 @@ DEPENDENCIES
   devise
   figaro
   font-awesome-sass (~> 4.7)
-  friendly_id (~> 5.2.0)
   impressionist
   jbuilder (~> 2.0)
   kaminari
