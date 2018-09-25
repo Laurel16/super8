@@ -71,12 +71,15 @@
 
 
 <% if params[:query].present? %>
-<p class="text-center margin-top-fifty"> <strong>Les films correspondants à votre recherche "<%= params[:query]%>"</strong>
+<p class="text-center margin-top-fifty"> <strong>Les films correspondants à votre recherche "<%= params[:query]%>"</strong></p>
   <% if @movies_total_number == 0 %>
-  <p class= "text-center">Nous n'avons pas encore cette référence ou ce-tte réalisateur-trice dans la base. Désolés! </p>
-  <p class= "text-center">Vous pouvez nous envoyer vos suggestions de films dans la partie <%= link_to "contact", about_path%>.</p>
+  <p class= "text-center">Oups, nous n'avons pas cette référence dans la base &#x1F64A </p>
+  <p class= "text-center">Pour nous envoyer vos suggestions <%= link_to "c'est ici", about_path%>.</p>
   <%end%>
-<% end %>
+  <%if @movies_total_number > 0 %>
+  <p class="text-center"> <%= @movies_total_number%></p>
+  <%end%>
+  <% end %>
 
 <% if params[:search].present? %>
 <p class="text-center margin-top-fifty"> <strong>Les films pour les enfants de <%= params[:search]%> ans et moins</strong></p>
