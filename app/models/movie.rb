@@ -1,6 +1,7 @@
 class Movie < ApplicationRecord
 
 
+
   CATEGORIES = %w(Comédie Aventure Animation Drame Science-fiction Comédie-musicale)
 
   AGES = %w(4 5 6 7 8 9 10 11 12 13 14 15)
