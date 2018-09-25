@@ -27,4 +27,4 @@ module Super8
     # -- all .rb files in that directory are automatically loaded.
   end
 end
-config.exceptions_app = self.routes
+
