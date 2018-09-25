@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   before_action :set_movie, only: [ :show, :edit, :update, :destroy]
   before_action :set_params, only: [:index]
   impressionist actions: [:show]
-  impressionist :unique => [:session_hash]
+
 
   def index
 
@@ -32,7 +32,7 @@ class MoviesController < ApplicationController
   def show
     skip_authorization
     @movie = Movie.find(params[:id])
-    impressionist @movie
+    impressionist(@movie)
     @same_director = Movie.where("director ILIKE ?", "%#{@movie.director}%").where.not("name ILIKE ?","%#{@movie.name}%").order('greatest(created_at, updated_at) desc')
   end
 

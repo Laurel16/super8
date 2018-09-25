@@ -26,7 +26,7 @@
         <p><strong>Durée:</strong> <%=@movie.length.strftime("%Hh%M")%></p>
         <%end %>
         <p><strong>À partir de:</strong> <%=@movie.age%> ans</p>
-        <i class="fa fa-eye"> <%=@movie.impressionist_count(:filter=>:session_hash) %></i>
+        <i class="fa fa-eye"> <%=@movie.impressionist_count %></i>
 
 
     </div>
@@ -38,6 +38,8 @@
         <p class="trailer"> <strong>La bande-annonce</strong></p>
         <iframe width="90%" height="460" src="https://www.youtube.com/embed/<%=@movie.trailer%>" frameborder="0" allowfullscreen></iframe>
       </div>
+
+
 
   </div>
 
