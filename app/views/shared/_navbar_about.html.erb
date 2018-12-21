@@ -11,6 +11,13 @@
 
     <%= link_to "Trouver un film", movies_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Crédits", credits_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% if current_user && current_user.admin? %>
+        <li><%= link_to destroy_user_session_path, method: :delete do %>
+                 <%= t(".sign_out", default: "Logout") %> </li>
+              <% end %>
+        <% else %>
+        <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></i></li>
+        <% end %>
 
 
 
@@ -20,6 +27,13 @@
          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><%= link_to "Trouver un film", movies_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to "À propos", about_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <% if current_user && current_user.admin? %>
+        <li><%= link_to destroy_user_session_path, method: :delete do %>
+                 <%= t(".sign_out", default: "Logout") %> </li>
+              <% end %>
+        <% else %>
+        <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></i></li>
+        <% end %>
         </ul>
     </div>
   </div>
@@ -32,10 +46,14 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><%= link_to "Les films", movies_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-         <% if user_signed_in? %>
-
-      <li> <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %><li>
-      <% end %>
+         <% if current_user && current_user.admin? %>
+        <li><%= link_to destroy_user_session_path, method: :delete do %>
+                 <%= t(".sign_out", default: "Logout") %> </li>
+              <% end %>
+        <% else %>
+        <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></i></li>
+        <% end %>
+        <li><%= link_to "Home", root_path, class: "navbar-wagon-brand"%></li>
       </ul>
     </div>
   </div>
