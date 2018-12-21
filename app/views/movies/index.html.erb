@@ -28,6 +28,7 @@
           <%end %>
           </div>
       </div>
+
     </div>
 
 
@@ -53,7 +54,7 @@
           <%= form_tag movies_path, method: :get do %>
           <%= label_tag :find, "Trier par catégories:"%>
           <div class="form-inline">
-            <%= select_tag :find, options_for_select(Movie::CATEGORIES), include_blank: true, class:"form-control" %>
+            ou <%= select_tag :find, options_for_select(Movie::CATEGORIES), include_blank: true, class:"form-control" %>
             <%= submit_tag "Go!", class: 'btn btn-green' %>
           </div>
 
@@ -116,7 +117,7 @@
                   <a href="<%= movie_url(movie) %>" >
                     <div class="card-hover">
                   <h4 class="raleway" style= "color: black; margin-bottom: 30px;">Un film de <%=movie.director%></h4>
-                </div>
+                  </div>
                   </a>
               </div>
               <div class="card-likes">

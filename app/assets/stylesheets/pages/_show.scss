@@ -7,6 +7,19 @@ h1.title  {
   font-weight: 550;
 }
 
+@media (max-width: 767px) {
+
+  p#synopsis {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  p.trailer {
+    margin-top: 0px;
+  }
+
+}
+
 p.show-text strong {
   font-weight: 550;
 }

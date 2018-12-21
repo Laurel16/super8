@@ -1,4 +1,4 @@
-<body style="background-color: white">
+<body style="background-color: white; width: 100%">
 <% content_for :nav, render('shared/navbar') %>
 <% content_for(:title) do %>
   <%= @movie.name %>
@@ -14,8 +14,8 @@
     <div class="col-xs-12 col-sm-4">
     <%= cl_image_tag @movie.poster, width: 400, :alt=>"Affiche du film #{@movie.name}"%>
     </div>
-    <div class="show-text col-xs-12 col-sm-6 col-offset-1 col-lg-offset-1 col-xs-offset-2">
-      <p><strong>Le synopsis</strong></p>
+    <div class="show-text col-xs-12 col-sm-6 col-offset-1 col-lg-offset-1 ">
+      <p id= "synopsis"><strong>Le synopsis</strong></p>
     <p class="text-justify"><%= @movie.pitch %></p>
 
 
@@ -38,7 +38,7 @@
 
   <div class="row margin-top-fifty text-center show-text">
       <div>
-        <p class="trailer"> <strong>La bande-annonce</strong></p>
+        <p class="trailer"> <strong>Trailer</strong></p>
         <iframe width="90%" height="460" src="https://www.youtube.com/embed/<%=@movie.trailer%>" frameborder="0" allowfullscreen></iframe>
       </div>
 
@@ -92,6 +92,7 @@
 
 
 
+
 <% if current_user && current_user.admin? %>
     <% if policy(Movie).edit? %>
     <p class="text-center padding-bottom">
@@ -100,7 +101,7 @@
     <% if policy(Movie).destroy? %>
     <%= link_to "Supprimer le film", movie_path, class: "btn btn-success btn-white", id:"margin-top", method: :delete %>
     <%end%>
-  </p>
+    </p>
 <%end%>
 
-
+</body>
