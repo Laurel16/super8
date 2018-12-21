@@ -41,7 +41,7 @@ html {
 }
 .footer-links a {
   color: white;
-  opacity: 0.20;
+  opacity: 0.40;
   text-decoration: none;
   font-size: 20px;
   padding: 0px 10px;
@@ -61,7 +61,7 @@ html {
 
 .footer-link_to a {
   color: white;
-  opacity: 0.15;
+  opacity: 0.40;
   text-decoration: none;
   font-family: raleway;
   font-size: 16px;
@@ -83,7 +83,16 @@ html {
 @media (max-width: 767px) {
 
 a#copyright {
-  font-size: 12px;
+  font-size: 10px;
+}
+
+.footer-link_to a {
+
+  opacity:  1;
+}
+
+.footer-links a {
+  opacity:  1;
 }
 
 }
