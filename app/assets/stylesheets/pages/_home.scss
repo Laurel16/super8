@@ -4,7 +4,9 @@ a {
   text-decoration: none;
 }
 
-
+.home-view {
+  margin-bottom: 150px;
+}
 
 
 /*  ===================================
@@ -40,10 +42,6 @@ a:hover{
 
 #explain h1 span {
   font-weight: bold;
-}
-
-#explain p span:hover {
-  transform: translateY(-20px);
 }
 
 #explain p
