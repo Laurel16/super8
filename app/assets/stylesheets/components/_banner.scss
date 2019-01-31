@@ -1,7 +1,7 @@
 .home-banner {
   background: linear-gradient(-225deg,
-    rgba(0,101,168,0.5) 0%,
-    rgba(0,36,61,0.5) 50%),asset-url('banner.jpg');
+    rgba(0,101,168,0.8) 0%,
+    rgba(0,36,61,0.8) 50%),asset-url('banner.jpg');
   background-size: cover;
   height: 100vh;
   color: white;
@@ -10,9 +10,10 @@
 }
 
 .home-banner p {
-font-family: "Raleway";
+color:#fff;
 font-size: 25px;
-color: white;
+font-weight: 100;
+margin: 8px 0 30px 0;
 opacity: 0.7;
 margin-bottom: 30px;}
 
@@ -25,8 +26,17 @@ margin-bottom: 20px;
 margin-top: 130px;}
 
 .home-banner h1 {
-  color: white;
-  font-weight: 500;
+  color: #fff;
+font-size: 65px;
+font-weight: 100;
+text-transform: uppercase;
+margin: 0;
+display: inline-block;
+}
+
+.home-banner h1 span {
+color: #d23333;
+font-weight: 500;
 }
 
 p.arrow {
