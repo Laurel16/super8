@@ -96,6 +96,12 @@ class MoviesController < ApplicationController
   #redirect_to movie_path(@movie)
 end
 
+def add
+  number = @movie.age
+  number.downto(0) { |i| print i, " " }
+  end
+
+
 
   private
 

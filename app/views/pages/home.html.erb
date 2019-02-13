@@ -13,66 +13,56 @@
 
 <section>
 
-  <div class="container content-box-md" id="explain">
+  <div class="container content-box-sm" id="explain">
 
     <h1><span>What</span> is it <span>?</span></h1>
     <hr>
     <p class="justify text-center"><span>SUPER 8</span> permet de trouver des idées de films à partager avec ses enfants.</br>L'âge est une indication, il dépend de leur sensibilité et de leur intérêt.</br>
     Bonnes scéances !  </p>
 
-
-
   </div>
 
   </section>
 
 
-<div class="container home-view">
 
 
-  <div class="row">
-    <% @random_movies.each do |movie| %>
-    <div class="col-xs-12 col-sm-4">
+<section id="portfolio-wrapper">
+  <div class="container-fluid">
+    <div class="row no-gutters">
+      <div id="home-container">
+        <% @random_movies.each do |movie| %>
 
-          <div class="card-body">
-             <div class="title-card text-center"><p style= "color: #43465b; font-weight: bold; font-family: Raleway; font-size: 18px;"> <%=movie.category%></p>
-            </div>
-             <div class="card-picture"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(
-              <%= cloudinary_url movie.picture, height: 300, :crop => :scale %>
+        <div class="col-md-4">
+          <div class="portfolio-item">
+            <a href="<%= movie_url(movie)%>">
+              <img src="<%= movie.picture%>"  class="img-responsive"alt="<%= movie.name %>">
+              <div class="portfolio-item-overlay">
+                      <div class="portfolio-item-details text-center">
 
-             );">
+                        <!-- Item header -->
+                        <h3><%= movie.name %></h3>
+                        <!-- Item strips -->
+                        <span></span>
 
-                  <p><%=movie.name %></p>
+                        <!-- Item description -->
+                        <p><%= movie.director %></p>
+                        <br>
+                         <p class="icon"><i class="fa fa-heart red">  </i> À partir de <%= movie.age %> ans</p>
+                         <p class="icon"><i class="fa fa-eye greeny"></i> <%=movie.impressionist_count%></p>
 
+                      </div>
+                    </div>
 
-                  <a href="<%= movie_url(movie) %>" >
-                    <div class="card-hover">
-                  <h4 class="raleway" style= "color: black; margin-bottom: 30px;">Un film de <%=movie.director%></h4>
-                </div>
-                  </a>
-              </div>
-              <div class="card-likes">
-              <ul class="list-inline">
-
-                <li><i class="fa fa-heart red"></i> À partir de <%= movie.age %> ans</li>
-                <li><i class="fa fa-eye green"></i> <%=movie.impressionist_count%></li>
-
-              </ul>
-
-
-            </div>
-
-          </div>
-
-
-    </div>
+              </a>
+        </div>
+      </div>
     <% end %>
+      </div>
+    </div>
+  </div>
+</section>
 
-
-
-
-
-</div>
 <p class="text-center margin-twenty"> <%= link_to "Voir tous les film", movies_path, class: "btn btn-success btn-white", id:"margin-top" %></p>
  <% if current_user && current_user.admin? %>
 <% if policy(Movie).create? %>
@@ -87,4 +77,5 @@
 <%end%>
 <% end %>
 </div>
+
 </body>

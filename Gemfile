@@ -27,6 +27,7 @@ gem "pundit"
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'acts_as_votable', '~> 0.11.1'
+gem 'jquery-turbolinks'
 
 
 group :development do
