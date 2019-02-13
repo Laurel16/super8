@@ -63,12 +63,12 @@
   </div>
 </section>
 
-<p class="text-center margin-twenty"> <%= link_to "Voir tous les film", movies_path, class: "btn btn-success btn-white", id:"margin-top" %></p>
+<p class="text-center content-box-lg"> <%= link_to "Voir tous les film", movies_path, class: "btn btn-red" %></p>
  <% if current_user && current_user.admin? %>
 <% if policy(Movie).create? %>
 
 <div class="container button-new">
-<p class="text-center"> <%= link_to "Créer un film", new_movie_path, class: "btn btn-success btn-white", id:"margin-top" %></p>
+<p class="text-center"> <%= link_to "Créer un film", new_movie_path, class: "btn btn-red btn-white", id:"margin-top" %></p>
 
 
 </div>

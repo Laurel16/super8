@@ -16,25 +16,39 @@ border: 1px solid #fff;
 
 .btn-home:hover, .btn-home:focus {
 color: #fff;
-background-color:#00C29A;
-border: 1px solid #00C29A;
+background-color:#d23333;;
+border: 1px solid #d23333;;
 }
 
 .btn-white{
-color: #00C29A;
-border: 1px solid #00C29A;
+color: #d23333;;
+border: 1px solid #d23333;;
 background: #ffffff;
 box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .btn-white:hover {
-  background: #00C29A;
+  background: #d23333;
 
 color: white;
 }
 
+.btn-red{
+color: #ffffff;
+border: 1px solid #d23333;;
+background: #d23333;
+box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.btn-red:hover {
+  background: #ffffff;
+
+color: #d23333;
+}
+
+
 a.btn.btn-success.btn-white:hover {
-background: #00C29A;
+background: #d23333;
 
 color: white;
 }

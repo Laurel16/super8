@@ -20,7 +20,6 @@
               class: "form-control"
               %>
               <%= submit_tag "Go!", class: 'button btn' %>
-              <%= link_to "clear", movies_path , class: 'button btn'%>
 
           <%end %>
           </div>
@@ -45,7 +44,7 @@
       </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-12">
        <div class="form-group raleway">
           <%= form_tag movies_path, method: :get do %>
           <%= label_tag :search, "Trier par âges:"%>
@@ -62,18 +61,16 @@
   <!-- form to add specific filters and refresh this page -->
 
 
-
-  </div>
-
-
     <p style= "color:white">&#x25BD; </p>
 
+</div>
 </div>
 
 
 <div id="results">
 <% if params[:query].present? %>
-<p class="text-center margin-top-fifty"> <strong>Les films correspondants à votre recherche "<%= params[:query]%>"</strong></p>
+<p class="text-center margin-top-fifty"> <strong>Les films correspondants à votre recherche "<%= params[:query]%>"</strong> </p>
+
   <% if @movies_total_number == 0 %>
   <p class= "text-center">Oups, nous n'avons pas cette référence dans la base &#x1F64A </p>
   <p class= "text-center">Pour nous envoyer vos suggestions <%= link_to "c'est ici", about_path%>.</p>
@@ -84,12 +81,14 @@
   <% end %>
 
 <% if params[:search].present? %>
-<p class="text-center margin-top-fifty"> Les films pour les enfants de <span><%= params[:search]%> ans </span> et moins</p>
+<p class="text-center margin-top-fifty"> Les films pour les enfants de <span><%= params[:search]%> ans </span> et moins </p>
+
 <% end %>
 
 
 <% if params[:find].present? %>
 <p class="text-center margin-top-fifty"> Les films de la catégorie <span><%= params[:find]%></span></p>
+
 <% end %>
 </div>
 
