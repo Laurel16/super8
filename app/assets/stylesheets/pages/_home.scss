@@ -140,27 +140,14 @@ border: none;
 
 
 
-.form-group .search label {
+.form-group  label {
 font-family: "Raleway", "Helvetica", "sans-serif";
 font-weight: 500;
 line-height: 1.1;
 font-size: 16px;
-color: #d23333;
+
 }
 
-.form-group .search a.button.btn{
-  font-family: "Raleway", sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-  background: transparent;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  padding-right: 35px;
-  outline: 0;
-  color: black;
-  border: 1px solid #ccc;
-}
 
 
 .button-group button span {
@@ -184,7 +171,7 @@ color: #d23333;
   transition: border-color .4s ease-in-out;
 }
 
-.form-group .search input {
+.form-group .search input, .form-group .search select, .form-group .search a.button.btn {
    font-family: "Raleway", sans-serif;
   font-size: 12px;
   font-weight: 700;
@@ -195,8 +182,19 @@ color: #d23333;
   padding-right: 35px;
   outline: 0;
   color: #d23333;
- border: 1px solid #ccc;
+ //border: 1px solid #ccc;
+ box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-box: 1px, solid, black;
 }
+
+
+
+.form-group .search input:hover, .form-group .search a.button.btn:hover {
+opacity: 0.8;
+background-color:  #d23333;
+color: white;
+}
+
 
 
 
