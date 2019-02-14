@@ -164,40 +164,6 @@ font-size: 16px;
   transition: border-color .4s ease-in-out;
 }
 
-.form-group .search a.button.btn.active,
-.button.is-checked {
-  color: #d23333;
-  border-bottom: 3px solid #d23333 ;
-  -webkit-transition: border-color .4s ease-in-out;
-  transition: border-color .4s ease-in-out;
-}
-
-.form-group .search input, .form-group .search select, .form-group .search a.button.btn {
-   font-family: "Raleway", sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  background: transparent;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  padding-right: 35px;
-  outline: 0;
-  color: #d23333;
- //border: 1px solid #ccc;
- box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  border-box: 1px, solid, black;
-}
-
-
-
-.form-group .search input:hover, .form-group .search a.button.btn:hover {
-opacity: 0.8;
-background-color:  #d23333;
-color: white;
-}
-
-
-
 
 /* Zoom effect */
 

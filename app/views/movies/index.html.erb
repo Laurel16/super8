@@ -10,7 +10,7 @@
   <!-- form to add specific filters and refresh this page -->
 
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-4">
        <div class=" form-group">
           <%= form_tag movies_path, method: :get do %>
           <%= label_tag :query, "Chercher par titre ou par réalisateur:" %>
@@ -30,33 +30,35 @@
 
   <!-- form to add specific filters and refresh this page -->
 
-  <div class="col-md-12">
+  <div class="col-md-4">
        <div class="form-group raleway">
           <%= form_tag movies_path, method: :get do %>
           <%= label_tag :find, "Trier par catégories:"%>
           <div class="form-inline search">
           <%= select_tag :find, options_for_select(Movie::CATEGORIES), include_blank: true, class:"form-control" %>
             <%= submit_tag "Go!", class: 'button btn' %>
-            <%= link_to "clear", movies_path , class: 'button btn'%>
           </div>
 
        <% end %>
       </div>
     </div>
 
-    <div class="col-md-12">
+    <div class="col-md-4">
        <div class="form-group raleway">
           <%= form_tag movies_path, method: :get do %>
           <%= label_tag :search, "Trier par âges:"%>
           <div class="form-inline search">
               <%= select_tag :search, options_for_select(Movie::AGES), include_blank: true, class:"form-control" %>
               <%= submit_tag "Go!", class: 'button btn' %>
-              <%= link_to "clear", movies_path , class: 'button btn'%>
+
           </div>
 
       <% end %>
       </div>
     </div>
+
+
+
 
   <!-- form to add specific filters and refresh this page -->
 
@@ -64,8 +66,14 @@
     <p style= "color:white">&#x25BD; </p>
 
 </div>
-</div>
 
+<div class="row" id="clear">
+<div class="col-md-12" >
+      <p >Voir tous les films : <%= link_to "all", movies_path , class: 'btn btn-red'%></p>
+
+    </div>
+</div>
+</div>
 
 <div id="results">
 <% if params[:query].present? %>
@@ -116,7 +124,7 @@
 
                   <a href="<%= movie_url(movie) %>" >
                     <div class="card-hover">
-                  <h4 class="raleway" style= "color: black; margin-bottom: 30px;">Un film de <%=movie.director%></h4>
+                  <h4 >Un film de <%=movie.director%></h4>
                   </div>
                   </a>
               </div>
