@@ -4,6 +4,7 @@ Rails.application.routes.draw do
    get 'crédits', to: 'pages#credits', as: :credits
    get 'search', to: 'pages#search', as: :search
   get 'about', to: 'pages#about', as: :about
+get 'test', to: 'pages#test', as: :test
 
 
   devise_for :users
