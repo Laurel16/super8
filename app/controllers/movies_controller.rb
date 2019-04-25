@@ -10,17 +10,23 @@ class MoviesController < ApplicationController
 
 
 
-    if params[:query].present?
-      sql_query = "name ILIKE :query OR director ILIKE :query"
-      @movies = Movie.where(sql_query, query:"%#{params[:query]}%").order('greatest(created_at, updated_at) desc')
-    elsif params[:search].present?
-      @movies = Movie.where("age <= ? ", params[:search]).order('age desc')
-    elsif params[:find].present?
-      sql_query = "category ILIKE :find"
-      @movies = Movie.where(sql_query, find:"%#{params[:find]}%").order('greatest(created_at, updated_at) desc')
+    #if params[:query].present?
+      #sql_query = "name ILIKE :query OR director ILIKE :query"
+      #@movies = Movie.where(sql_query, query:"%#{params[:query]}%").order('greatest(created_at, updated_at) desc')
+    #elsif params[:search].present?
+      #@movies = Movie.where("age <= ? ", params[:search]).order('age desc')
+    #elsif params[:find].present?
+      #sql_query = "category ILIKE :find"
+      #@movies = Movie.where(sql_query, find:"%#{params[:find]}%").order('greatest(created_at, updated_at) desc')
+    #else
+      #@movies = Movie.order('greatest(created_at, updated_at) desc')
+    #end
+
+     if params[:query].present?
+    @movies = Movie.search(params[:query])
     else
-      @movies = Movie.order('greatest(created_at, updated_at) desc')
-    end
+     @movies = Movie.all
+   end
     @movies_total_number = @movies.length
 
     @movies = @movies.page params[:page]

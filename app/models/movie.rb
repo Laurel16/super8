@@ -1,6 +1,11 @@
 class Movie < ApplicationRecord
 
-
+ include PgSearch
+  pg_search_scope :search,
+    against: [ :name, :director ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 
   CATEGORIES = %w(Comédie Aventure Animation Drame Science-fiction Comédie-musicale)
 

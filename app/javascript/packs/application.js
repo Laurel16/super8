@@ -1,6 +1,9 @@
 import "bootstrap";
 
 
+
+
+
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
 
@@ -13,3 +16,14 @@ initIsotope();
 
 import { initHomeIsotope } from '../components/isotope_home';
 initHomeIsotope();
+
+
+import ReactOnRails from 'react-on-rails';
+import Search from '../components/Search';
+
+ReactOnRails.register({
+  Search
+});
+
+
+

@@ -47,9 +47,11 @@
     <meta name="turbolinks-visit-control" content="reload">
 
 
-
+  <!-- Google font -->
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:300,400,600,700" rel="stylesheet">
+   <!-- Font awesome -->
 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
   </head>
@@ -81,7 +83,7 @@
  <%= render 'shared/footer' %>
  <% end %>
 
-  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application' %>
 
   <%= yield(:after_js) %>

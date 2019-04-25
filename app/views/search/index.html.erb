@@ -1,0 +1,16 @@
+ <h1><%= params[:query] %> (<%= @movies.count %> results)</h1>
+
+  <div>
+    <% @movies.each do |movie| %>
+      <a href="<%= movie_path(movie) %>">
+
+          <p><%= movie.name %></p>
+          <p><%= movie.director %></p>
+
+
+
+      </a>
+    <% end %>
+  </div>
+
+

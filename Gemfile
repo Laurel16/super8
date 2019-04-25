@@ -28,6 +28,9 @@ gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'acts_as_votable', '~> 0.11.1'
 gem 'jquery-turbolinks'
+gem "react_on_rails", "11.0.0"
+gem 'mini_racer', platforms: :ruby
+gem 'pg_search'
 
 
 group :development do

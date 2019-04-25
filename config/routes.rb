@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'pages/home'
    get 'crédits', to: 'pages#credits', as: :credits
-   get 'search', to: 'pages#search', as: :search
-  get 'about', to: 'pages#about', as: :about
-get 'test', to: 'pages#test', as: :test
+
+    get 'about', to: 'pages#about', as: :about
+    get 'test', to: 'pages#test', as: :test
+    get '/search', to: 'movies#index', as: :search
 
 
   devise_for :users
