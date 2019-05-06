@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
   impressionist actions: [:show]
 
 
+
   def index
 
 
@@ -13,7 +14,7 @@ class MoviesController < ApplicationController
     #if params[:query].present?
       #sql_query = "name ILIKE :query OR director ILIKE :query"
       #@movies = Movie.where(sql_query, query:"%#{params[:query]}%").order('greatest(created_at, updated_at) desc')
-    #elsif params[:search].present?
+    #elsif params[:age_search].present?
       #@movies = Movie.where("age <= ? ", params[:search]).order('age desc')
     #elsif params[:find].present?
       #sql_query = "category ILIKE :find"
@@ -24,6 +25,8 @@ class MoviesController < ApplicationController
 
      if params[:query].present?
     @movies = Movie.search(params[:query])
+    elsif params[:age_search].present?
+      @movies = Movie.where("age <= ? ", params[:age_search]).order('age desc')
     else
      @movies = Movie.all
    end
@@ -123,5 +126,6 @@ def add
     @movie = Movie.find(params[:id])
 
   end
+
 
 end

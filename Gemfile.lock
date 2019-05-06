@@ -247,6 +247,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    semantic-ui-sass (2.4.0.1)
+      sass (>= 3.2)
     simple_form (4.0.0)
       actionpack (> 4)
       activemodel (> 4)
@@ -322,6 +324,7 @@ DEPENDENCIES
   redis
   remotipart!
   sass-rails
+  semantic-ui-sass
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)

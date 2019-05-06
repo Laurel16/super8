@@ -2,7 +2,7 @@ class Movie < ApplicationRecord
 
  include PgSearch
   pg_search_scope :search,
-    against: [ :name, :director ],
+    against: [ :name, :director, :category ],
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }

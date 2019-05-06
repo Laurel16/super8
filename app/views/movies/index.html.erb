@@ -9,11 +9,14 @@
 <div class= "container thousand-one margin-sixty">
   <!-- form to add specific filters and refresh this page -->
 
+<p class="text-justify" id="explain">Vous pouvez chercher <br>par <span>titre</span>, par <span>réalisateur</span>, </br> par <span>catégorie</span> <br/>(comédie, aventure, animation, drame science-fiction, comédie-musicale), </br> ou par <span>âge </span> de l'enfant.</p><br/>
 
-<%= react_component("Search") %>
-  <div class="row">
-    <div class="col-md-4">
-       <div class=" form-group">
+<div class="search-tag">
+
+      <%= react_component("Search") %>
+
+
+       <!--<div class=" form-group">
           <%= form_tag movies_path, method: :get do %>
           <%= label_tag :query, "Chercher par titre ou par réalisateur:" %>
            <div class="form-inline search">
@@ -27,12 +30,12 @@
           </div>
       </div>
 
-    </div>
+    </div> -->
 
 
   <!-- form to add specific filters and refresh this page -->
 
-  <div class="col-md-4">
+  <!-- <div class="col-md-4">
        <div class="form-group raleway">
           <%= form_tag movies_path, method: :get do %>
           <%= label_tag :find, "Trier par catégories:"%>
@@ -42,25 +45,32 @@
           </div>
 
        <% end %>
-      </div>
-    </div>
 
-    <div class="col-md-4">
-       <div class="form-group raleway">
+      </div>
+    </div> -->
+
+
+
+
           <%= form_tag movies_path, method: :get do %>
-          <%= label_tag :search, "Trier par âges:"%>
-          <div class="form-inline search">
-              <%= select_tag :search, options_for_select(Movie::AGES), include_blank: true, class:"form-control" %>
-              <%= submit_tag "Go!", class: 'button btn' %>
+          <!--<%= label_tag :age_search, "Trier par âges:"%> -->
+          <div class="form-group">
+              <%= select_tag :age_search, options_for_select(Movie::AGES), :prompt => "Age",class:"form-control", :onchange=>'this.form.submit();' %>
 
           </div>
 
       <% end %>
-      </div>
-    </div>
+
+<%= link_to "Tous les films", movies_path, class:"btn btn-green reset" %>
+
+
+</div>
 
 
 
+
+
+</div>
 
   <!-- form to add specific filters and refresh this page -->
 
@@ -69,15 +79,9 @@
 
 </div>
 
-<div class="row" id="clear">
-<div class="col-md-12" >
-      <p >Voir tous les films : <%= link_to "see all", movies_path , class: 'btn btn-red'%></p>
 
-    </div>
-</div>
-</div>
 
-<div id="results">
+<!--<div id="results">
 <% if params[:query].present? %>
 <p class="text-center margin-top-fifty"> <strong>Les films correspondants à votre recherche "<%= params[:query]%>"</strong> </p>
 
@@ -95,12 +99,7 @@
 
 <% end %>
 
-
-<% if params[:find].present? %>
-<p class="text-center margin-top-fifty"> Les films de la catégorie <span><%= params[:find]%></span></p>
-
-<% end %>
-</div>
+</div> -->
 
 
 
