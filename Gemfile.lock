@@ -324,7 +324,6 @@ DEPENDENCIES
   redis
   remotipart!
   sass-rails
-  semantic-ui-sass
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
