@@ -110,6 +110,12 @@
     <% end %>
   <% end %>
 
+  <% if params[:age_search].present? %>
+    <% if @movies_total_number > 0 %>
+        <p class= "text-center"> <strong><%= @movies.count %> </strong> films pour les enfants de <strong> <%= params[:age_search] %> </strong> ans (et en dessous) </p>
+    <% end %>
+  <% end %>
+
   <div class="row">
     <% @movies.each do |movie| %>
     <div class="col-xs-12 col-sm-4">
