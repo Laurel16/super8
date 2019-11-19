@@ -25,9 +25,9 @@ export default class Search extends React.Component {
 
 
         <form className='navbar-form' method="GET" action="search">
-           <div class='input-group'>
+           <div className='input-group'>
             <input className="form-control" name="query" type="text" label= "jean" placeholder="E.T l'extraterrestre..." onChange={this.onChange} autoComplete="off" />
-            <span class="input-group-btn">
+            <span className="input-group-btn">
             <button type="submit" className="btn btn-green">
               <i className="fas fa-search" ></i>
             </button>

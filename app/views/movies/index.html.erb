@@ -104,10 +104,12 @@
 
 <br/>
 <div class="container padding-bottom">
-<% if params[:query].present? %>
+  <% if params[:query].present? %>
     <% if @movies_total_number > 0 %>
         <p class= "text-center">Nombre de résultats correspondant à votre recherche: <%= @movies.count %> </p>
     <% end %>
+  <% end %>
+
   <div class="row">
     <% @movies.each do |movie| %>
     <div class="col-xs-12 col-sm-4">
@@ -150,12 +152,13 @@
 
     </div>
     <% end %>
+
     <% if @movies_total_number == 0 %>
       <p class= "text-center">Aucun résultat pour <strong>"<%= params[:query] %>"</strong></p>
       <p class= "text-center"> Envoyez nous vos <%= link_to "suggestions", about_path%>, nous les examinerons avec plaisir!</p>
     <%end%>
 
-    <% end %>
+
 
 
 
