@@ -2,14 +2,12 @@
 <% content_for :nav, render('shared/navbar_index') %>
 
 
-<div class="index-banner">
 
-</div>
 
 <div class= "container thousand-one margin-sixty">
   <!-- form to add specific filters and refresh this page -->
 
-<p class="text-justify" id="explain">Vous pouvez chercher <br>par <span>titre</span>, par <span>réalisateur</span>, </br> par <span>catégorie</span> <br/>(comédie, aventure, animation, drame science-fiction, comédie-musicale), </br> ou par <span>âge </span> de l'enfant.</p><br/>
+<p class="text-justify" id="explain"><strong>Vous</strong> pouvez <strong>chercher</strong> des <strong>films</strong><br>par <span>titre</span>, par <span>réalisateur.rice</span>, </br> par <span>catégorie</span> ou par <span>âge </span> de <strong>l'enfant</strong>.</p><br/>
 
 <div class="search-tag">
 
@@ -50,6 +48,15 @@
     </div> -->
 
 
+
+  <%= form_tag movies_path, method: :get do %>
+          <!--<%= label_tag :find, "Trier par categories:"%> -->
+          <div class="form-group">
+              <%= select_tag :find, options_for_select(Movie::CATEGORIES), :prompt => "Categorie",class:"form-control", :onchange=>'this.form.submit();' %>
+
+          </div>
+
+      <% end %>
 
 
           <%= form_tag movies_path, method: :get do %>
@@ -106,13 +113,19 @@
 <div class="container padding-bottom">
   <% if params[:query].present? %>
     <% if @movies_total_number > 0 %>
-        <p class= "text-center">Nombre de résultats correspondant à votre recherche: <%= @movies.count %> </p>
+        <p class= "text-center result">Nombre de résultats correspondant à votre recherche: <span><%= @movies.count %></span> </p>
     <% end %>
   <% end %>
 
   <% if params[:age_search].present? %>
     <% if @movies_total_number > 0 %>
-        <p class= "text-center"> <strong><%= @movies.count %> </strong> films pour les enfants de <strong> <%= params[:age_search] %> </strong> ans (et en dessous) </p>
+        <p class= "text-center result"> <strong><%= @movies.count %> </strong> films pour les enfants de <span> <%= params[:age_search] %> </span> ans (et moins) </p>
+    <% end %>
+  <% end %>
+
+  <% if params[:find].present? %>
+    <% if @movies_total_number > 0 %>
+        <p class= "text-center result"> <strong><%= @movies.count %> </strong> films de la catégorie <span> <%= params[:find] %> </span> </p>
     <% end %>
   <% end %>
 
@@ -176,4 +189,5 @@
    </div>
 
 </div>
+
 </body>
