@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import SearchResult from './SearchResult';
 
@@ -26,3 +27,4 @@ export default ({ results, loading }) => (
     )}
   </div>
 );
+*/

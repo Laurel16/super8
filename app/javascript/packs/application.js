@@ -17,6 +17,8 @@ import { initHomeIsotope } from '../components/isotope_home';
 initHomeIsotope();
 
 
+/*
+
 import ReactOnRails from 'react-on-rails';
 import Search from '../components/Search';
 
@@ -25,4 +27,4 @@ ReactOnRails.register({
 
 });
 
-
+*/

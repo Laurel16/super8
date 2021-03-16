@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 
 export default ({ result }) => (
@@ -8,3 +9,5 @@ export default ({ result }) => (
     </div>
   </a>
 );
+
+*/
